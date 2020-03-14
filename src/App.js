@@ -20,7 +20,7 @@ class App extends PureComponent {
                     <Layout>
                         <Header><AppMenu/></Header>
                         <Content><Routes/></Content>
-                        <Footer><h2>Footer 4</h2></Footer>
+                        <Footer><h2>Footer 5</h2></Footer>
                     </Layout>
                 </BrowserRouter>
             </Provider>
