@@ -1,31 +1,37 @@
-import React, {PureComponent} from 'react';
-import './App.css';
+import React, { PureComponent } from "react";
+import "./App.css";
 import AppMenu from "./components/menu";
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Routes from "./components/routes";
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 import store from "./store";
 
-import {Layout} from 'antd';
+import { Layout } from "antd";
 
-const {Header, Footer, Content} = Layout;
-
+const { Header, Footer, Content } = Layout;
 
 class App extends PureComponent {
-    render() {
-
-        return (<>
-            <Provider store={store}>
-                <BrowserRouter>
-                    <Layout>
-                        <Header><AppMenu/></Header>
-                        <Content><Routes/></Content>
-                        <Footer><h2>Footer 5</h2></Footer>
-                    </Layout>
-                </BrowserRouter>
-            </Provider>
-        </>)
-    }
+  render() {
+    return (
+      <>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Layout>
+              <Header>
+                <AppMenu />
+              </Header>
+              <Content>
+                <Routes />
+              </Content>
+              <Footer>
+                <h2>Footer 5</h2>
+              </Footer>
+            </Layout>
+          </BrowserRouter>
+        </Provider>
+      </>
+    );
+  }
 }
 
 export default App;
