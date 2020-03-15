@@ -3,11 +3,11 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import FormAuth from "pages/auth-page";
-import FormRegister from "pages/register-page";
-import InfoPage from "pages/info-page";
-import ListPage from "pages/list-page";
-import NewPublic from "components/api";
+import FormAuth from "../pages/auth-page";
+import FormRegister from "../pages/register-page";
+import InfoPage from "../pages/info-page";
+import ListPage from "../pages/list-page";
+import NewPublic from "../pages/admin-panel";
 
 const Routes = () => {
     return (

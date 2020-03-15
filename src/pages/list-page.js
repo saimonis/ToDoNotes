@@ -3,7 +3,8 @@ import {List, Row, Col} from "antd";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
-import {getData} from "actions/aList"
+import {getData} from "../actions/aList"
+
 
 const list_options = (data,loading)=> ({
     dataSource:data,

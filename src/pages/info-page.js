@@ -1,8 +1,8 @@
 import React, {PureComponent} from "react";
 import {connect} from "react-redux";
 
-import {getItem} from "actions/aList-item";
-import ItemCart from "components/itemCart"
+import {getItem} from "../actions/aList-item";
+import ItemCart from "../components/itemCart"
 
 class InfoPage extends PureComponent {
     componentDidMount() {

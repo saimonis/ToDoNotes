@@ -1,5 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
+import * as firebase from "firebase";
 import {Form, Input, Button, Checkbox, Col, Row} from "antd";
+
+import context from "../api-context/context";
 
 const layout = {
     labelCol: {
@@ -17,8 +20,26 @@ const tailLayout = {
 };
 
 const FormAuth = () => {
-    const onFinish = values => {
-        console.log('Success:', values);
+    const {authHandler} = useContext(context);
+
+    const onFinish = ({email,password}) => {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((res)=>{
+                firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+                    localStorage.setItem('token', idToken);
+                }).catch(function(error) {
+                    // Handle error
+                });
+
+
+                authHandler(true)
+            })
+            .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
     };
 
     const onFinishFailed = errorInfo => {
@@ -37,8 +58,8 @@ const FormAuth = () => {
             onFinishFailed={onFinishFailed}
         >
             <Form.Item
-                label="Username"
-                name="username"
+                label="email"
+                name="email"
                 rules={[
                     {
                         required: true,
