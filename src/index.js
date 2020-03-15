@@ -6,6 +6,8 @@ import * as firebase from "firebase";
 
 import App from "./app";
 
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBhQexwh3mFeWnJlr86MWo1k_kyL3aFR6s",
   authDomain: "todonotes-75606.firebaseapp.com",
@@ -18,4 +20,4 @@ const firebaseConfig = {
 
 export const app = firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App/>, document.getElementById("root"));
