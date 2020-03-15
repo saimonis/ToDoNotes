@@ -2,6 +2,16 @@
   "name": "info-pj",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,9 +23,13 @@
     "customize-cra": "^0.9.1",
     "firebase": "^7.10.0",
     "formik": "^2.1.4",
+    "husky": "^4.2.3",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
+    "lint-staged": "^10.0.8",
     "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "ramda": "^0.27.0",
     "react": "^16.13.0",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.0",
@@ -23,6 +37,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.1.3",
     "redux-thunk": "^2.3.0",
