@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
-import App from "./node_modules/App";
 import "firebase/auth";
 import "firebase/database";
 import * as firebase from "firebase";
 
-var firebaseConfig = {
+import App from "./app";
+
+const firebaseConfig = {
   apiKey: "AIzaSyBhQexwh3mFeWnJlr86MWo1k_kyL3aFR6s",
   authDomain: "todonotes-75606.firebaseapp.com",
   databaseURL: "https://todonotes-75606.firebaseio.com",
@@ -18,4 +18,4 @@ var firebaseConfig = {
 
 export const app = firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<App deb={"saasas"} />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
